@@ -1,18 +1,5 @@
-
 <?php
  
-
-
-
-
-
-
-  
-
-
-
-
-
 
         
         if(isset($_POST['g-recaptcha-response'])){
@@ -66,7 +53,6 @@ $success = mail($to, $subject, $message, $headers, '‑fchris@robertscreative.co
 
 
 ?>
-
 <?php
 /**
  * template name: acknowledge
@@ -76,25 +62,10 @@ $success = mail($to, $subject, $message, $headers, '‑fchris@robertscreative.co
 
 
 
-
-
-
-
-
 get_header(); ?>
 
-	<div id="content-area">
-    <div class="message-wrapper">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+<div id="content-area">
+  <div class="message-wrapper">
     <?php if(!$captcha){
           echo '<h1 class="title2">Oops!</h1>
         <p>Sorry, there was a problem sending your captcha.</p>';
@@ -114,19 +85,18 @@ get_header(); ?>
         <p>You are spammer ! Get out !</p>';
         }
     ?>
-    
-   
-    
-    	<?php if (isset($success) && $success) { ?>
-    	<h1 class="title2">Thank You</h1>
-        <p>Your order has been sent.</p>
-        <?php } else { ?>
-        <h1 class="title2">Oops!</h1>
-        <p>Sorry, there was a problem sending your order.</p>
-        <?php } ?>
-    </div>
-	</div><!-- #content-area -->
+    <?php if (isset($success) && $success) { ?>
+    <h1 class="title2">Thank You</h1>
+    <p>Your order has been sent.</p>
+    <?php } else { ?>
+    <h1 class="title2">Oops!</h1>
+    <p>Sorry, there was a problem sending your order.</p>
+    <?php } ?>
+  </div>
+</div>
+<!-- #content-area -->
 
 <?php
 
 get_footer();
+
